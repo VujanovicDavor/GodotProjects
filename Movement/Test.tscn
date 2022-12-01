@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MovingPlatfrom.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -34,7 +35,12 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 format = 1
-tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0 )
+tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327692, 0, 0, 327693, 0, 0 )
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 341, 229 )
+
+[node name="MovingPlatfrom" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 511, 357 )
+speed = 8000
+move_range = Vector2( 200, 0 )
