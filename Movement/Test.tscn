@@ -33,15 +33,18 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 8 )
 tile_set = SubResource( 2 )
+collision_layer = 6
+collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327692, 0, 0, 327693, 0, 0 )
+tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327692, 0, 0, 327693, 0, 0 )
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 341, 229 )
 jump_force = 300
 
 [node name="MovingPlatfrom" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 511, 357 )
+position = Vector2( 512, 352 )
 speed = 8000
 move_range = Vector2( 200, 0 )
