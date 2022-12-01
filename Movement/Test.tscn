@@ -39,6 +39,8 @@ tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327692, 0, 0
 
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 341, 229 )
+jump_force = 300
+gravity = 500
 
 [node name="MovingPlatfrom" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 511, 357 )

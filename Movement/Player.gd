@@ -2,6 +2,8 @@ extends "res://Actor.gd"
 
 const MAX_JUMP_COUNTER = 2
 var jump_counter = MAX_JUMP_COUNTER
+export var jump_force = 220
+export var gravity = 400
 
 onready var max_screen_size = get_viewport_rect().size
 
@@ -31,12 +33,13 @@ func get_vertical_velocity(vertical_velocity: Vector2, delta: float):
 		jump_counter = 0
 		#print(jump_counter)
 	
-	if Input.is_action_just_pressed("jump"):
-		jump_counter += 1
-	
 	if jump_counter <= MAX_JUMP_COUNTER:
+		if Input.is_action_just_pressed("jump"):
+			jump_counter += 1
+			vertical_velocity.y = -jump_force
+	
+	
 		vertical_velocity.y -= jump_force if Input.is_action_just_pressed("jump") else 0
-		
 	if !is_on_floor():
 		if jump_counter < MAX_JUMP_COUNTER:
 			vertical_velocity.y += gravity  * delta
