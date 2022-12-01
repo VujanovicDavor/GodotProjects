@@ -38,8 +38,6 @@ func get_vertical_velocity(vertical_velocity: Vector2, delta: float):
 			jump_counter += 1
 			vertical_velocity.y = -jump_force
 	
-	
-		vertical_velocity.y -= jump_force if Input.is_action_just_pressed("jump") else 0
 	if !is_on_floor():
 		if jump_counter < MAX_JUMP_COUNTER:
 			vertical_velocity.y += gravity  * delta
